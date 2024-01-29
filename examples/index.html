@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>JS Wizard - The awesome JavaScript Wizard library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+
+    <!-- Include JS Wizard CSS -->
+    <link href="../dist/css/js-wizard.css" rel="stylesheet" type="text/css" />
+
+    <!-- Demo Page Style - You don't need -->
+    <style>
+      :root {
+        --animate-delay: 0.1s;
+      }
+      body {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    </style>
+
+</head>
+<body>
+
+    <br />
+    <p>
+      <label>Theme:</label>
+      <select id="theme_selector">
+        <option value="default">Default</option>
+        <option value="arrows" selected>Arrows</option>
+        <option value="dots">Dots</option>
+        <option value="progress">Progress</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="dark_mode" value="1" />
+      <label for="dark_mode">Dark Mode</label>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" id="is_justified" value="1" checked />
+      <label for="is_justified">Justified</label>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Animation:</label>
+      <select id="animation">
+            <option value="none">None</option>
+            <option value="fade">Fade</option>
+            <option value="slide-horizontal" selected>Slide Horizontal</option>
+            <option value="slide-vertical">Slide Vertical</option>
+            <option value="slide-swing">Slide Swing</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <label>Go To:</label>
+      <select id="got_to_step">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <label>External Buttons:</label>
+      <button class="btn btn-secondary" id="prev-btn" type="button">Go Previous</button>
+      <button class="btn btn-secondary" id="next-btn" type="button">Go Next</button>
+      <button class="btn btn-danger" id="reset-btn" type="button">Reset Wizard</button>
+    </p>
+    <br />
+
+
+    <!-- Wizard main element -->
+    <div id="jswizard" dir="rtl-">
+        <ul class="nav nav-progress">
+          <li class="nav-item">
+            <a class="nav-link" href="#step-1">
+              <div class="num">1</div>
+              Customer Details
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#step-2">
+              <span class="num">2</span>
+              Products Details
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#step-3">
+              <span class="num">3</span>
+              Shipping Details
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#step-4">
+              <span class="num">4</span>
+              Confirm Order
+            </a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+            <h3>Step 1 Content</h3>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+          <h3>Step 2 Content</h3>
+          <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </div>
+        </div>
+          <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </div>
+          <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
+              <h3>Step 4 Content</h3>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <br /> &nbsp;
+
+    <div style="background-color: grey;height:300px;"></div>
+
+    <!-- Include SmartWizard JavaScript source -->
+    <script src="../dist/js-wizard.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+      // // JS Wizard Events
+      // document.getElementById('jswizard').addEventListener('initialized', (e) => {
+      //   console.log("initialized");
+      // });
+
+      // document.getElementById('jswizard').addEventListener('loaded', (e) => {
+      //   console.log("loaded", e);
+      // });
+
+      // document.getElementById('jswizard').addEventListener('leaveStep', (e) => {
+      //   console.log("leaveStep", e);
+      //   return true;
+      // });
+
+      // document.getElementById('jswizard').addEventListener('stepContent', (e) => {
+      //   console.log("stepContent", e);
+      //   const d = new Date();
+      //   let time = d.getTime();
+
+      //   return 'Hello ' + time;
+      // });
+
+      // document.getElementById('jswizard').addEventListener('showStep', (e) => {
+      //   console.log("showStep", e);
+      // });
+
+      var wizard = new jsWizard.createWizard('#jswizard', {
+        selected: 0,
+        theme: 'arrows',
+        transition: {
+          // animation: 'fade'
+        },
+        toolbar: {
+            position: 'both', // none, top, bottom, both
+            showNextButton: true, // show/hide a Next button
+            showPreviousButton: true, // show/hide a Previous button
+            extraHtml: '' // Extra html to show on toolbar
+        }
+      });
+
+      // Demo Events
+      document.getElementById('next-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        wizard.next();
+      });
+
+      document.getElementById('prev-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        wizard.prev();
+      });
+
+      document.getElementById('reset-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        wizard.reset();
+      });
+
+      document.getElementById('got_to_step').addEventListener('change', (e) => {
+        e.preventDefault();
+        const step_index = e.currentTarget.value - 1;
+        wizard.goTo(step_index);
+        return true;
+      });
+
+      document.getElementById('dark_mode').addEventListener('click', (e) => {
+        wizard.setOptions({
+          darkMode: e.currentTarget.checked
+        });
+        return true;
+      });
+
+      document.getElementById('is_justified').addEventListener('click', (e) => {
+        wizard.setOptions({
+          justified: e.currentTarget.checked
+        });
+        return true;
+      });
+
+      document.getElementById('animation').addEventListener('change', (e) => {
+        e.preventDefault();
+        wizard.setOptions({
+          transition: {
+              animation: e.currentTarget.value
+          }
+        });
+      });
+
+      document.getElementById('theme_selector').addEventListener('change', (e) => {
+        e.preventDefault();
+        wizard.setOptions({
+          theme: e.currentTarget.value
+        });
+      });
+
+    </script>
+</body>
+</html>
